@@ -1,0 +1,158 @@
+Type help or '?' for a list of available commands.
+
+ciscoasa>
+ciscoasa>
+ciscoasa>en
+Password: 
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#int gig1/1
+ciscoasa(config-if)#
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif INSIDE1
+INFO: Security level for "INSIDE1" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 100
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 10.20.20.34 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#int gig1/2
+ciscoasa(config-if)#
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif INSIDE2
+INFO: Security level for "INSIDE2" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 100
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 10.20.20.38 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#int gig1/4
+ciscoasa(config-if)#
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif DMZ
+INFO: Security level for "DMZ" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 70
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 10.20.20.1 255.255.255.224
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#int gig1/3
+ciscoasa(config-if)#
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif OUTSIDE
+INFO: Security level for "OUTSIDE" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 0
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 105.100.50.2 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#do wr
+ciscoasa(config)#wr mem
+Building configuration...
+Cryptochecksum: 35fe628f 13e11c8c 2796668a 5be72dd2
+
+1193  bytes copied in 2.902 secs (411 bytes/sec)
+[OK]
+ciscoasa(config)#
+ciscoasa(config)#
+
+
+
+dreapta
+
+ciscoasa>
+ciscoasa>
+ciscoasa>en
+Password: 
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#int gig1/1
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif INSIDE1
+INFO: Security level for "INSIDE1" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 100
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 10.20.20.42 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#int gig1/2
+ciscoasa(config-if)#
+ciscoasa(config-if)#nameif INSIDE2
+INFO: Security level for "INSIDE2" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 100
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 10.20.20.46 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#int gig1/2
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#int gig1/1
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#
+ciscoasa(config-if)#ex
+ciscoasa(config)#
+ciscoasa(config)#int gig1/3
+ciscoasa(config-if)#no sh
+
+ciscoasa(config-if)#nameif OUTSIDE
+INFO: Security level for "OUTSIDE" set to 0 by default.
+ciscoasa(config-if)#
+ciscoasa(config-if)#security-level 0
+ciscoasa(config-if)#
+ciscoasa(config-if)#ip add 205.200.100.2 255.255.255.252
+Waiting for the earlier webvpn instance to terminate...
+Previous instance shut down.Starting a new one
+ciscoasa(config-if)#
+ciscoasa(config-if)#wr memory
+Building configuration...
+Cryptochecksum: 35b05f2c 1a3e06e5 5a0a7d3e 45e57c98
+
+1164  bytes copied in 1.209 secs (962 bytes/sec)
+[OK]
+ciscoasa(config-if)#
+ciscoasa(config-if)#
+ciscoasa(config-if)#

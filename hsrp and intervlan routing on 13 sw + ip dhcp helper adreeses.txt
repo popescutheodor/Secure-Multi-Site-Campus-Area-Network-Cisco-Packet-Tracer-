@@ -1,0 +1,256 @@
+Password: 
+HQ-MLSW1>enable
+Password: 
+Password: 
+HQ-MLSW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ-MLSW1(config)#interface GigabitEthernet1/0/3
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#exit
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int vlan 10
+HQ-MLSW1(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip add 192.168.10.3 255.255.255.0
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#standby 10 ip 192.168.10.1
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#exit
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int vlan 20
+HQ-MLSW1(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#int vlan 20
+%HSRP-6-STATECHANGE: Vlan10 Grp 10 state Speak -> Standby
+
+%HSRP-6-STATECHANGE: Vlan10 Grp 10 state Standby
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip add 172.16.0.3 255.255.0.0
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip add 172.16.0.3 255.255.0.0
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#standby 20 ip 172.16.0.1
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ex
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int vlan 20
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#exit
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int vlan 50
+HQ-MLSW1(config-if)#
+%LINK-5-CHANGED: Interface Vlan50, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan50, changed state to up
+
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip add 10.10.0.3 255.255.0.0
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+%HSRP-6-STATECHANGE: Vlan20 Grp 20 state Speak -> Standby
+
+%HSRP-6-STATECHANGE: Vlan20 Grp 20 state Standby -> Active
+
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#standby 50
+% Incomplete command.
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#standby 50 ip 10.10.0.1
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ex
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#do wr
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+%HSRP-6-STATECHANGE: Vlan50 Grp 50 state Speak -> Standby
+
+%HSRP-6-STATECHANGE: Vlan50 Grp 50 state Standby -> Active
+
+
+
+HQ-MLSW2>
+HQ-MLSW2>en
+Password: 
+Password: 
+HQ-MLSW2#
+HQ-MLSW2#
+HQ-MLSW2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#int vlan 10
+HQ-MLSW2(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip add 192.168.10.2 255.255.255.0
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#standby
+% Incomplete command.
+HQ-MLSW2(config-if)#standby 10 ip 192.168.10.1
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ex
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#int vlan 20
+HQ-MLSW2(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+%HSRP-6-STATECHANGE: Vlan10 Grp 10 state Speak -> Standby
+
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip add 172.16.0.2 255.255.0.0
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#standby 20 ip 172.16.0.1
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ex
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#int vlan 50
+HQ-MLSW2(config-if)#
+%LINK-5-CHANGED: Interface Vlan50, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan50, changed state to up
+
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+%HSRP-6-STATECHANGE: Vlan20 Grp 20 state Speak -> Standby
+
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip add 10.10.0.2 255.255.0.0
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.5
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ip helper-address 10.20.20.6
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#standby 50 ip 10.10.0.1
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#ex
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#do wr
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+%HSRP-6-STATECHANGE: Vlan50 Grp 50 state Speak -> Standby
+
+
+in partea dreapta
+
+int vlan 60 
+ip add 172.17.0.3 255.255.0.0
+ip helper-address 10.20.20.5
+ip helper-address 10.20.20.6
+
+standby 60 ip 172.17.0.1
+exit
+
+
+int vlan 90 
+ip add 10.11.0.3 255.255.0.0
+ip helper-address 10.20.20.5
+ip helper-address 10.20.20.6
+
+standby 90 ip 10.11.0.1
+exit
+
+
+
+mlsw2 din dreapta
+int vlan 60 
+ip add 172.17.0.2 255.255.0.0
+ip helper-address 10.20.20.5
+ip helper-address 10.20.20.6
+
+standby 60 ip 172.17.0.1
+exit
+
+
+int vlan 90 
+ip add 10.11.0.2 255.255.0.0
+ip helper-address 10.20.20.5
+ip helper-address 10.20.20.6
+
+standby 90 ip 10.11.0.1
+exit
+
+
+
+
+
+HQ-MLSW1#sh standby brief
+                     P indicates configured to preempt.
+                     |
+Interface   Grp  Pri P State    Active          Standby         Virtual IP
+Vl10        10   100   Active   local           192.168.10.2    192.168.10.1   
+Vl20        20   100   Active   local           172.16.0.2      172.16.0.1     
+Vl50        50   100   Active   local           10.10.0.2       10.10.0.1      
+HQ-MLSW1#
+

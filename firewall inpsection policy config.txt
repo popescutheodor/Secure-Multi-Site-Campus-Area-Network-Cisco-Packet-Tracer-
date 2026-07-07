@@ -1,0 +1,127 @@
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#route OUTSIDE
+% Incomplete command.
+ciscoasa(config)#
+ciscoasa(config)#route OUTSIDE 0.0.0.0 0.0.0.0 105.100.50.1
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#object network INSIDE1-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 192.168.10.0 255.255.255.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#object network INSIDE1a-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 192.168.10.0 255.255.255.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#object network INSIDE2-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 172.16.0.0 255.255.0.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#object network INSIDE2a-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 172.16.0.0 255.255.0.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#object network INSIDE3-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 10.10.0.0 255.255.0.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#object network INSIDE3a-OUTSIDE
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#subnet 10.10.0.0 255.255.0.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#we mem
+          ^
+% Invalid input detected at '^' marker.
+	
+ciscoasa#wr mem
+Building configuration...
+Cryptochecksum: 35fe628f 13e11c8c 2796668a 5be72dd2
+
+2073  bytes copied in 2.071 secs (1000 bytes/sec)
+[OK]
+ciscoasa#
+ciscoasa#
+
+ adica asta 
+!
+object network INSIDE1-OUTSIDE
+ subnet 192.168.10.0 255.255.255.0
+ nat (INSIDE1,OUTSIDE) dynamic interface
+object network INSIDE1a-OUTSIDE
+ subnet 192.168.10.0 255.255.255.0
+ nat (INSIDE2,OUTSIDE) dynamic interface
+object network INSIDE2-OUTSIDE
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE) dynamic interface
+object network INSIDE2a-OUTSIDE
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE) dynamic interface
+object network INSIDE3-OUTSIDE
+ subnet 10.10.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE) dynamic interface
+object network INSIDE3a-OUTSIDE
+ subnet 10.10.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE) dynamic interface
+!
+route OUTSIDE 0.0.0.0 0.0.0.0 105.100.50.1 1
+!
+
+
+
+pesntru fireall dreapta
+
+
+
+object network INSIDE1-OUTSIDE
+ subnet 10.11.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE) dynamic interface
+object network INSIDE1a-OUTSIDE
+ subnet 10.11.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE) dynamic interface
+
+object network INSIDE2-OUTSIDE
+ subnet 172.17.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE) dynamic interface
+object network INSIDE2a-OUTSIDE
+ subnet 172.17.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE) dynamic interface
+

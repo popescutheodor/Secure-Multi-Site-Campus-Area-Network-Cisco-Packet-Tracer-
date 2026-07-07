@@ -1,0 +1,75 @@
+User Access Verification
+
+Password: 
+Password: 
+
+HQ-MLSW1>en
+Password: 
+HQ-MLSW1#
+HQ-MLSW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#vlan 10
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#name Management
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#vlan 20
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#name LAN
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#vlan 50
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#name WLAN
+HQ-MLSW1(config-vlan)#
+HQ-MLSW1(config-vlan)#ex
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int range gig1/0/2-6
+HQ-MLSW1(config-if-range)#
+HQ-MLSW1(config-if-range)#
+HQ-MLSW1(config-if-range)#switchport mode trunk
+
+
+
+
+
+HQ-MLSW1(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/6, changed state to up
+
+HQ-MLSW1(config-if-range)#
+HQ-MLSW1(config-if-range)#exit
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int gig1/0/10
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#switchport mode access
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#switchport acces vlan 50
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ex
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#do wr
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1#
+%SYS-5-CONFIG_I: Configured from console by console

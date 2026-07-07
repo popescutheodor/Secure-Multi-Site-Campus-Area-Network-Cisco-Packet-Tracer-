@@ -1,0 +1,137 @@
+partea stanga
+
+router ospf 15
+ router-id 3.1.3.1
+ network 10.20.20.36 0.0.0.3 area 0
+ network 192.168.10.0 0.0.0.255 area 0
+ network 172.16.0.0 0.0.255.255 area 0
+ network 10.10.0.0 0.0.255.255 area 0
+
+
+Password: 
+HQ-MLSW2>enable
+Password: 
+Password: 
+HQ-MLSW2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ-MLSW2(config)#interface GigabitEthernet1/0/3
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#
+HQ-MLSW2(config-if)#exit
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#
+HQ-MLSW2(config)#router ospf 15
+HQ-MLSW2(config-router)# router-id 3.1.3.1
+HQ-MLSW2(config-router)# network 10.20.20.36 0.0.0.3 area 0
+HQ-MLSW2(config-router)# network 192.168.10.0 0.0.0.255 area 0
+HQ-MLSW2(config-router)# network 172.16.0.0 0.0.255.255 area 0
+HQ-MLSW2(config-router)# network 10.10.0.0 0.0.255.255 area 0
+HQ-MLSW2(config-router)#
+HQ-MLSW2(config-router)#
+HQ-MLSW2(config-router)#
+HQ-MLSW2(config-router)#
+07:04:18: %OSPF-5-ADJCHG: Process 15, Nbr 2.1.2.1 on Vlan20 from LOADING to FULL, Loading Done
+
+07:04:23: %OSPF-5-ADJCHG: Process 15, Nbr 2.1.2.1 on Vlan10 from LOADING to FULL, Loading Done
+
+07:04:26: %OSPF-5-ADJCHG: Process 15, Nbr 2.1.2.1 on Vlan50 from LOADING to FULL, Loading Done
+
+
+
+partea dreapta
+
+router ospf 15
+ router-id 4.1.4.1
+ network 10.20.20.40 0.0.0.3 area 0
+ network 172.17.0.0 0.0.255.255 area 0
+ network 10.11.0.0 0.0.255.255 area 0
+
+
+
+router ospf 15
+ router-id 5.1.5.1
+ network 10.20.20.44 0.0.0.3 area 0
+ network 172.17.0.0 0.0.255.255 area 0
+ network 10.11.0.0 0.0.255.255 area 0
+
+
+
+hqisp
+
+router ospf 15
+ router-id 7.1.7.1
+ network 105.100.50.0 0.0.0.3 area 0
+ network 20.20.20.0 0.0.0.3 area 0
+
+
+do wr
+ 
+
+
+
+internet
+
+router ospf 15
+ router-id 8.1.8.1
+ network 30.30.30.0 0.0.0.3 area 0
+ network 20.20.20.0 0.0.0.3 area 0
+
+
+do wr
+
+
+branch isp
+
+
+router ospf 15
+ router-id 9.1.9.1
+ network 30.30.30.0 0.0.0.3 area 0
+ network 205.200.100.0 0.0.0.3 area 0
+
+
+do wr
+ 
+
+
+firewall
+
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#router ospf 15
+ciscoasa(config-router)#
+ciscoasa(config-router)#router-id 3.2.4.1
+ciscoasa(config-router)#
+ciscoasa(config-router)#network 105.100.50.0 255.255.255.252 area 0
+ciscoasa(config-router)#
+ciscoasa(config-router)#network 10.20.20.0 255.255.255.252 area 0
+09:02:36: %OSPF-5-ADJCHG: Process 15, Nbr 7.1.7.1 on GigabitEthern
+ciscoasa(config-router)#
+ciscoasa(config-router)#
+ciscoasa(config-router)#network 10.20.20.0 255.255.255.224 area 0
+ciscoasa(config-router)#
+ciscoasa(config-router)#network 10.20.20.32 255.255.255.252 area 0
+ciscoasa(config-router)#network 10.20.20.36 255.255.255.252 area 0
+ciscoasa(config-router)#
+ciscoasa(config-router)#
+ciscoasa(config-router)#
+09:04:07: %OSPF-5-ADJCHG: Process 15, Nbr 2.1.2.1 on GigabitEthernet1/1 from LOADING to FULL, Loading Done
+
+ciscoasa(config-router)#ex
+ciscoasa(config)#
+ciscoasa(config)#wr mem
+Building configuration...
+Cryptochecksum: 35fe628f 13e11c8c 2796668a 5be72dd2
+
+1420  bytes copied in 2.696 secs (526 bytes/sec)
+[OK]
+ciscoasa(config)#
+09:04:15: %OSPF-5-ADJCHG: Process 15, Nbr 3.1.3.1 on GigabitEthernet1/2 from LOADING to FULL, Loading Done
+
+ciscoasa(config)#
+ciscoasa(config)#
+
+
+

@@ -1,0 +1,34 @@
+vlan 10
+name Management
+vlan 20
+name LAN
+vlan 50
+name WLAN
+exit
+
+
+int range gig1/0/2-6
+switchport mode trunk
+exit
+
+do wr
+
+
+
+partea din dreapta
+
+vlan 60
+name BLAN
+vlan 90
+name BWLAN
+vlan 199
+name BLACKHOLE
+exit
+
+int range gig1/0/2-5
+switchport mode trunk
+shut
+exit
+
+do wr
+

@@ -1,0 +1,71 @@
+HQ-MLSW1#show etherchannel port-channel
+                Channel-group listing:
+                ----------------------
+
+Group: 1
+----------
+                Port-channels in the group:
+                ---------------------------
+
+Port-channel: Po1    (Primary Aggregator)
+------------
+
+Age of the Port-channel   = 00d:00h:17m:53s
+Logical slot/port   = 2/1       Number of ports = 3
+GC                  = 0x00000000      HotStandBy port = null
+Port state          = Port-channel 
+Protocol            =   LACP
+Port Security       = Disabled
+
+Ports in the Port-channel:
+
+Index   Load   Port     EC state        No of bits
+------+------+------+------------------+-----------
+  0     00     Gig1/0/22Active             0
+  0     00     Gig1/0/23Active             0
+  0     00     Gig1/0/21Active             0
+Time since last port bundled:    00d:00h:09m:48s    Gig1/0/21
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#
+HQ-MLSW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#ip routing
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int gig1/0/1
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#no switchport
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#ip add 10.20.20.33 255.255.255.252 
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#do wr
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#
+
+
+
+
+
+ip routing
+int gig1/0/1
+no switchport
+ip add 10.20.20.41 255.255.255.252
+
+ex
+
+do wr

@@ -1,0 +1,80 @@
+ciscoasa>
+ciscoasa>
+ciscoasa>
+ciscoasa>
+ciscoasa>en
+Password: 
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit icmp any any
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit udp any any eq 67
+ciscoasa(config)#access-list RES-ACCESS Extended Permit udp any any eq 68
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit udp any any eq 53
+ciscoasa(config)#access-list RES-ACCESS Extended Permit tcp any any eq 53
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit tcp any any eq 80
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit tcp any any eq 25
+ciscoasa(config)#
+ciscoasa(config)#access-list RES-ACCESS Extended Permit tcp any any eq 20
+ciscoasa(config)#access-list RES-ACCESS Extended Permit tcp any any eq 21
+ciscoasa(config)#
+ciscoasa(config)#
+ciscoasa(config)#access-group RES-ACCESS in interface DMZ 
+ciscoasa(config)#
+ciscoasa(config)#access-group RES-ACCESS in interface OUTSIDE
+ciscoasa(config)#
+ciscoasa(config)#wr mem
+Building configuration...
+Cryptochecksum: 35fe628f 13e11c8c 2796668a 5be72dd2
+
+2676  bytes copied in 1.993 secs (1342 bytes/sec)
+[OK]
+ciscoasa(config)#
+
+
+
+fw dreapta
+
+access-list RES-ACCESS Extended Permit icmp any any
+
+access-list RES-ACCESS Extended Permit udp any any eq 67
+access-list RES-ACCESS Extended Permit udp any any eq 68
+
+
+access-list RES-ACCESS Extended Permit udp any any eq 53
+access-list RES-ACCESS Extended Permit tcp any any eq 53
+
+access-list RES-ACCESS Extended Permit tcp any any eq 80
+
+access-list RES-ACCESS Extended Permit tcp any any eq 25
+
+
+access-list RES-ACCESS Extended Permit tcp any any eq 20
+access-list RES-ACCESS Extended Permit tcp any any eq 21
+
+ 
+access-group RES-ACCESS in interface OUTSIDE
+
+wr memory
+
+
+
+
+
+
+
+
+
+
+
+
+
+

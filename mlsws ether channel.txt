@@ -1,0 +1,109 @@
+asta prima
+
+
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#int range gig1/0/21-23
+HQ-MLSW1(config-if-range)#
+HQ-MLSW1(config-if-range)#channel-group 1 mode active
+HQ-MLSW1(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/21, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/21, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/22, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/22, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/23, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/23, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to up
+
+HQ-MLSW1(config-if-range)#
+HQ-MLSW1(config-if-range)#interface Port-channel 1
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#switchport mode trunk
+HQ-MLSW1(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/21, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/21, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/22, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/22, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/23, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0/23, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to up
+
+HQ-MLSW1(config-if)#
+HQ-MLSW1(config-if)#exit
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#do wr
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+HQ-MLSW1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+asta pentru a doua 
+
+int range gig1/0/21-23
+channel-group 1 mode passive
+ex
+interface Port-channel 1
+switchport mode trunk
+ex
+do wr
+
+
+partea dreapta
+
+
+int range gig1/0/21-23
+channel-group 2 mode active
+ex
+interface Port-channel 2
+switchport mode trunk
+ex
+do wr
+
+
+int range gig1/0/21-23
+channel-group 2 mode passive
+ex
+interface Port-channel 2
+switchport mode trunk
+ex
+do wr

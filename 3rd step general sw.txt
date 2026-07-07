@@ -1,0 +1,94 @@
+vlan 10
+name Management
+vlan 20
+name LAN
+vlan 50
+name WLAN
+exit
+
+int range fa0/1-2
+switchport mode trunk
+ex
+
+int range fa0/3-20
+switchport mode access
+switchport access vlan  20
+ex
+
+int range fa0/21-24
+switchport mode access
+switchport access vlan  50
+ex
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan  199
+shut
+ex
+do wr
+
+
+si pentru IT e diferit
+
+
+vlan 10
+name Management
+vlan 20
+name LAN
+vlan 50
+name WLAN
+exit
+
+int range fa0/1-2
+switchport mode trunk
+ex
+
+int range fa0/3-20
+switchport mode access
+switchport access vlan  20
+ex
+
+int range fa0/21-24
+switchport mode access
+switchport access vlan  50
+ex
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan  10
+ex
+do wr
+
+
+partea din dreapta
+
+
+vlan 60
+name BLAN
+vlan 90
+name BWLAN
+vlan 199
+name BLACKHOLE
+exit
+
+int range fa0/1-2
+switchport mode trunk
+ex
+
+int range fa0/3-20
+switchport mode access
+switchport access vlan  60
+ex
+
+int range fa0/21-24
+switchport mode access
+switchport access vlan  90
+ex
+
+int range gig0/1-2
+switchport mode access
+switchport access vlan  199
+shut
+ex
+do wr
+

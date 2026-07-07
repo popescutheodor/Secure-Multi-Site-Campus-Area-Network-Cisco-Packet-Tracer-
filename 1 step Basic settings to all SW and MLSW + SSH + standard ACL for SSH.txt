@@ -1,0 +1,46 @@
+en
+conf t
+
+hostname HQ-MLSW1
+
+line console 0
+password cisco
+login
+exec-timeout 60 0
+exit
+
+enable password cisco
+banner motd #UNAUTHORIZED ACCESS IS PROHIBITED#
+
+no ip domain-lookup
+
+service password-encryption
+
+username cisco password cisco
+ip domain-name cisco.com
+crypto key generate rsa general-keys modulus 1024
+
+ip ssh version 2
+access-list 2 permit  192.168.10.0 255.255.255.0
+access-list 2 deny any
+
+line vty 0 15
+login local
+transport input ssh
+access-class 2 in
+exit
+do wr
+
+
+
+
+
+
+line console 0
+password cisco
+login
+exec-timeout 60 0
+do wr
+exit
+
+

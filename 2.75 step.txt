@@ -1,0 +1,58 @@
+HS-SW>en
+Password: 
+HS-SW#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+HS-SW(config)#
+HS-SW(config)#
+HS-SW(config)#
+HS-SW(config)#vlan 10
+HS-SW(config-vlan)#name Management
+HS-SW(config-vlan)#vlan 20
+HS-SW(config-vlan)#name LAN
+HS-SW(config-vlan)#vlan 50
+HS-SW(config-vlan)#name WLAN
+HS-SW(config-vlan)#exit
+HS-SW(config)#
+HS-SW(config)#
+HS-SW(config)#int range fa0/1-2
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport mode trunk
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#ex
+HS-SW(config)#
+HS-SW(config)#int range fa0/3-20
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport mode access
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport access vlan  20
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#ex
+HS-SW(config)#
+HS-SW(config)#int range fa0/21-24
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport mode access
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport access vlan  50
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#ex
+HS-SW(config)#
+HS-SW(config)#
+HS-SW(config)#int range gig0/1-2
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport mode access
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#switchport access vlan 199
+% Access VLAN does not exist. Creating vlan 199
+HS-SW(config-if-range)#
+HS-SW(config-if-range)#shut
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down
+HS-SW(config-if-range)#ex
+HS-SW(config)#
+HS-SW(config)#do wr
+Building configuration...
+[OK]
+HS-SW(config)#
+HS-SW(config)#
